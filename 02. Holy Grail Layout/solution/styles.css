@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  max-width: 100%;
+  font-family: lato;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+
+header {
+  background-color: lightskyblue;
+  grid-area: header;
+
+  padding: 0 0 0 2em;
+}
+
+main {
+  background-color: lightcyan;
+  grid-area: main;
+  padding: 0 2em 0 2em;
+  min-height: 80vh;
+
+}
+
+nav,
+aside {
+  background: lightpink;
+  padding: 0 2em 0 2em;
+
+}
+
+nav {
+  grid-area: nav;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  background-color: lightblue;
+  grid-area: footer;
+
+  padding: 0 0 0 2em;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    grid-template-rows: 1fr 1fr auto 1fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      " main main main "
+      "aside aside aside"
+      "footer footer footer";
+    max-height: 100vh;
+  }
+
+  nav,
+  aside {
+    background: lightpink;
+    padding: 0 2em 0 2em;
+
+  }
+}
